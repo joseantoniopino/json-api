@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Src\Repositories\ApartmentRepository;
+use Src\Repositories\ApartmentRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(
+            ApartmentRepositoryInterface::class,
+            ApartmentRepository::class
+        );
     }
 
     /**

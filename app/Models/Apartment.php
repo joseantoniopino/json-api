@@ -14,8 +14,10 @@ class Apartment extends Model
         'id' => 'string',
     ];
 
+    protected $fillable = ['id', 'category_id', 'name', 'description', 'quantity'];
 
-    public function level(): BelongsTo
+
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
