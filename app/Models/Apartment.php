@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Src\Traits\HasSorts;
 
 class Apartment extends Model
 {
-    use HasFactory, HasSorts;
+    use HasFactory;
 
-    public array $allowedSorts = ['title', 'description'];
+    public array $allowedSorts = ['name', 'description', 'quantity'];
 
     protected $casts = [
         'id' => 'string',

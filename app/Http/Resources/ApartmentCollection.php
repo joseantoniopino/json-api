@@ -18,13 +18,7 @@ class ApartmentCollection extends ResourceCollection
     public function toArray($request): array
     {
         return [
-            'data' => $this->collection,
-            'links' => [
-                'self' => route('apartments.index')
-            ],
-            'meta' => [
-                'articles_count' => $this->collection->count()
-            ]
+            'data' => $this->collection
         ];
     }
 }
