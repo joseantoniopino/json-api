@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Apartment;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use App\Http\Resources\ApartmentCollection;
+use App\Http\Resources\ApartmentResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use JetBrains\PhpStorm\ArrayShape;
-use Src\Repositories\ApartmentRepositoryInterface;
+use Src\Apartment\Repositories\ApartmentRepositoryInterface;
 
 class ApartmentController extends Controller
 {
@@ -15,9 +15,11 @@ class ApartmentController extends Controller
     public function __construct(private ApartmentRepositoryInterface $repository){}
 
 
-    public function index(): LengthAwarePaginator
+    // RESOURCE
+    public function index(): ApartmentCollection
     {
-        return $this->repository->all();
+        $apartments = $this->repository->all();
+        return ApartmentCollection::make($apartments);
     }
 
 
@@ -29,9 +31,11 @@ class ApartmentController extends Controller
     }
 
 
-    public function show(string $id): Apartment
+    // RESOURCE
+    public function show(string $id): ApartmentResource
     {
-        return $this->repository->find($id);
+        $apartment = $this->repository->find($id);
+        return ApartmentResource::make($apartment);
     }
 
 

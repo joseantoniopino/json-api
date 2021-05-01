@@ -1,10 +1,7 @@
 <?php
 
 
-namespace Src\Repositories;
-
-
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+namespace Src\Apartment\Repositories;
 
 interface ApiRepositoryInterface
 {

@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Src\Repositories\ApartmentRepository;
-use Src\Repositories\ApartmentRepositoryInterface;
+use Src\Apartment\Repositories\ApartmentRepository;
+use Src\Apartment\Repositories\ApartmentRepositoryInterface;
 
 class AppServiceProvider extends ServiceProvider
 {

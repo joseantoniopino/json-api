@@ -1,16 +1,15 @@
 <?php
 
 
-namespace Src\Repositories;
+namespace Src\Apartment\Repositories;
 
 
 use App\Models\Apartment;
-use App\Models\Category;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Support\Str;
 
 class ApartmentRepository implements ApartmentRepositoryInterface
 {
@@ -23,9 +22,12 @@ class ApartmentRepository implements ApartmentRepositoryInterface
     }
 
 
-    public function all(): LengthAwarePaginator
+    public function all()
     {
-        return $this->model->with('category:id,title')->paginate(15);
+        return $this->model::applySorts(request('sort'))->get();
+        //return $apartmentQuery->get();
+
+        //return $this->model->with('category:id,title')->paginate(15);
     }
 
     public function create(array $data): void

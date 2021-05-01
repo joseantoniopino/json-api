@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Src\Repositories;
+namespace Src\Apartment\Repositories;
 
 
 interface ApartmentRepositoryInterface extends ApiRepositoryInterface
