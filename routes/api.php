@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/v1')->group(function () {
     Route::apiResources([
         'apartments' => ApartmentController::class
+    ],[
+        'names' => 'api.v1.apartments'
     ]);
 });
 

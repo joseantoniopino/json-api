@@ -20,6 +20,17 @@ class Apartment extends Model
 
     protected $fillable = ['id', 'category_id', 'name', 'description', 'quantity'];
 
+    public array $allowedRelations = ['category'];
+
+    public function fields(): array
+    {
+        return [
+            'name' => $this->name,
+            'description' => $this->description,
+            'quantity' => $this->quantity
+        ];
+    }
+
 
     public function category(): BelongsTo
     {

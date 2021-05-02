@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Str;
 
 class ApartmentRepository implements ApartmentRepositoryInterface
 {
@@ -24,7 +23,7 @@ class ApartmentRepository implements ApartmentRepositoryInterface
 
     public function all()
     {
-        return $this->model->applyFilters()->applySorts()->jsonPaginate();
+        return $this->model->with('category')->applyFilters()->applySorts()->jsonPaginate();
     }
 
     public function create(array $data): void

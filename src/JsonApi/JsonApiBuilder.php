@@ -58,4 +58,22 @@ class JsonApiBuilder
             return $this;
         };
     }
+
+    /*public function withRelations(): \Closure
+    {
+        return function (){
+            if (is_null($includes = request('include')))
+                return $this;
+
+            Str::of($includes)->explode(',');
+            foreach ($includes as $value){
+                if (!collect($this->model->allowedRelations)->contains($value))
+                    abort(400, "Relation not allowed, '$value'");
+                $this->model->chargeRelations($value);
+
+            }
+            return $this;
+        };
+
+    }*/
 }
