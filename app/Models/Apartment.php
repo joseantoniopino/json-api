@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Str;
 
 class Apartment extends Model
 {
@@ -27,21 +28,29 @@ class Apartment extends Model
 
     public function scopeName(Builder $query, $value)
     {
-        $query->where('name', 'LIKE', "%$value%");
+        $query->orWhere('name', 'LIKE', "%$value%");
     }
 
     public function scopeDescription(Builder $query, $value)
     {
-        $query->where('description', 'LIKE', "%$value%");
+        $query->orWhere('description', 'LIKE', "%$value%");
     }
 
     public function scopeYear(Builder $query, $value)
     {
-        $query->whereYear('created_at',$value);
+        $query->orWhereYear('created_at',$value);
     }
 
     public function scopeMonth(Builder $query, $value)
     {
-        $query->whereMonth('created_at',$value);
+        $query->orWhereMonth('created_at',$value);
+    }
+
+    public function scopeSearch(Builder $query, $values)
+    {
+        foreach (Str::of($values)->explode(' ') as $value){
+            $query->orWhere('name', 'LIKE', "%$value%")
+                ->orWhere('description','LIKE', "%$value%");
+        }
     }
 }
