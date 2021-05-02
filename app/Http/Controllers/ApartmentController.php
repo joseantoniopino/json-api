@@ -8,6 +8,8 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use JetBrains\PhpStorm\ArrayShape;
 use Src\Apartment\Repositories\ApartmentRepositoryInterface;
+use Src\Apartment\SaveApartmentUseCase;
+use Src\Apartment\UpdateApartmentUseCase;
 
 class ApartmentController extends Controller
 {
@@ -25,7 +27,8 @@ class ApartmentController extends Controller
 
     public function store(Request $request): JsonResponse
     {
-        $this->repository->create($request->all());
+        (new SaveApartmentUseCase($this->repository))->execute($request->all());
+
         $data = $this->createResponse(200, 'Apartment created', $request->get('id'));
         return new JsonResponse($data, 200);
     }
@@ -41,7 +44,8 @@ class ApartmentController extends Controller
 
     public function update(Request $request, string $id): JsonResponse
     {
-        $this->repository->update($request->all(), $id);
+        $request->request->add(['id' => $id]);
+        (new UpdateApartmentUseCase($this->repository))->execute($request->all());
         $data = $this->createResponse(201, 'Apartment updated', $id);
         return new JsonResponse($data, 201);
     }
