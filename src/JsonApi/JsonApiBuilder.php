@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 
 class JsonApiBuilder
 {
-    public function jsonPaginate()
+    public function jsonPaginate(): \Closure
     {
         return function () {
             return
@@ -20,7 +20,7 @@ class JsonApiBuilder
         };
     }
 
-    public function applySorts()
+    public function applySorts(): \Closure
     {
         return function () {
             if (!property_exists($this->model, 'allowedSorts'))
@@ -42,6 +42,18 @@ class JsonApiBuilder
                     abort(400, "Invalid Query Parameter, '$sortField'");
 
                 $this->orderBy($sortField, $direction);
+            }
+            return $this;
+        };
+    }
+
+    public function applyFilters(): \Closure
+    {
+        return function () {
+            foreach (request('filter', []) as $filter => $value){
+                if (!$this->hasNamedScope($filter))
+                    abort(400, "$filter is not allowed");
+                $this->{$filter}($value);
             }
             return $this;
         };

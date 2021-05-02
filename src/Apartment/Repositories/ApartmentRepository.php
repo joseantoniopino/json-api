@@ -24,7 +24,7 @@ class ApartmentRepository implements ApartmentRepositoryInterface
 
     public function all()
     {
-        return $this->model::applySorts()->jsonPaginate();
+        return $this->model->applyFilters()->applySorts()->jsonPaginate();
     }
 
     public function create(array $data): void
