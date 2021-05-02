@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Src\Apartment\Repositories;
+namespace Src\Contracts;
 
 interface ApiRepositoryInterface
 {

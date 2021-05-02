@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApartmentController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,10 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('/v1')->group(function () {
-    Route::apiResources([
-        'apartments' => ApartmentController::class
-    ],[
-        'names' => 'api.v1.apartments'
-    ]);
+    Route::apiResources(['apartments' => ApartmentController::class], ['names' => 'api.v1.apartments']);
+    Route::apiResources(['categories' => CategoryController::class], ['names' => 'api.v1.categories']);
 });
 

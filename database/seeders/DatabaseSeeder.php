@@ -16,8 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
         Category::factory()->create([
            'id' => Str::uuid(),
            'title' => 'Luxury',
@@ -36,6 +34,6 @@ class DatabaseSeeder extends Seeder
             'description' => 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
         ]);
 
-        Apartment::factory(100)->create();
+        Apartment::factory(20)->create();
     }
 }

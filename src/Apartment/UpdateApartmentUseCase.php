@@ -6,7 +6,6 @@ namespace Src\Apartment;
 
 use Src\Apartment\Exceptions\ApartmentNotFoundException;
 use Src\Apartment\Repositories\ApartmentRepositoryInterface;
-use Src\ValueObjects\NotEmptyInteger;
 use Src\ValueObjects\Uuid;
 
 class UpdateApartmentUseCase
