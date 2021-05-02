@@ -1,10 +1,11 @@
 <?php
 
 
-namespace Src\Category;
+namespace Src\Category\Application;
 
-use Src\Category\Exceptions\CategoryNotFoundException;
-use Src\Category\Repositories\CategoryRepositoryInterface;
+use Src\Category\Domain\Entities\Domain\Exceptions\CategoryNotFoundException;
+use Src\Category\Infrastructure\Repositories\CategoryRepositoryInterface;
+use Src\Category\Domain\Entities\CategoryDomain;
 use Src\ValueObjects\Uuid;
 
 class UpdateCategoryUseCase

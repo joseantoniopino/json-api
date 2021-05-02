@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Src\Category\Repositories;
+namespace Src\Category\Infrastructure\Repositories;
 
 
 use Src\Contracts\ApiRepositoryInterface;

@@ -1,12 +1,10 @@
 <?php
 
 
-namespace Src\Category;
+namespace Src\Category\Application;
 
-
-
-
-use Src\Category\Repositories\CategoryRepositoryInterface;
+use Src\Category\Infrastructure\Repositories\CategoryRepositoryInterface;
+use Src\Category\Domain\Entities\CategoryDomain;
 
 class SaveCategoryUseCase
 {

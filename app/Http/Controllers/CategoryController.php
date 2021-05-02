@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\CategoryCollection;
-use App\Http\Resources\CategoryResource;
-use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
+use App\Http\Resources\{CategoryCollection, CategoryResource};
+use Illuminate\Http\{JsonResponse, Request};
 use JetBrains\PhpStorm\ArrayShape;
-use Src\Category\Repositories\CategoryRepository;
-use Src\Category\SaveCategoryUseCase;
-use Src\Category\UpdateCategoryUseCase;
+use Src\Category\Infrastructure\Repositories\CategoryRepository;
+use Src\Category\Application\{SaveCategoryUseCase, UpdateCategoryUseCase};
 
 class CategoryController extends Controller
 {
@@ -17,7 +14,6 @@ class CategoryController extends Controller
     public function __construct(private CategoryRepository $repository){}
 
 
-    // RESOURCE
     public function index(): CategoryCollection
     {
         $categories = $this->repository->all();
@@ -34,7 +30,6 @@ class CategoryController extends Controller
     }
 
 
-    // RESOURCE
     public function show(string $id): CategoryResource
     {
         $category = $this->repository->find($id);

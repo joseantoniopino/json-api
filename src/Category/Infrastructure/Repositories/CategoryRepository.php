@@ -1,10 +1,9 @@
 <?php
 
 
-namespace Src\Category\Repositories;
+namespace Src\Category\Infrastructure\Repositories;
 
 
-use App\Models\Apartment;
 use App\Models\Category;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;

@@ -1,10 +1,8 @@
 <?php
 
 
-namespace Src\Category;
+namespace Src\Category\Domain\Entities;
 
-
-use Src\ValueObjects\NotEmptyInteger;
 use Src\ValueObjects\NotEmptyString;
 use Src\ValueObjects\Uuid;
 
