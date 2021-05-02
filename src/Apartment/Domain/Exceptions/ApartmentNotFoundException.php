@@ -1,6 +1,6 @@
 <?php
 
-namespace Src\Apartment\Exceptions;
+namespace Src\Apartment\Domain\Exceptions;
 
 use Throwable;
 

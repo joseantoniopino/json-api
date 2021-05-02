@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Src\Apartment\Repositories\ApartmentRepository;
-use Src\Apartment\Repositories\ApartmentRepositoryInterface;
+use Src\Apartment\Infrastructure\Repositories\ApartmentRepository;
+use Src\Apartment\Infrastructure\Repositories\ApartmentRepositoryInterface;
 use Src\Category\Repositories\CategoryRepository;
 use Src\Category\Repositories\CategoryRepositoryInterface;
 

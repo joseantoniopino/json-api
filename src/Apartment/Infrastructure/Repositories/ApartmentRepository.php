@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Src\Apartment\Repositories;
+namespace Src\Apartment\Infrastructure\Repositories;
 
 
 use App\Models\Apartment;
@@ -29,10 +29,6 @@ class ApartmentRepository implements ApartmentRepositoryInterface
     public function create(array $data): void
     {
         $this->model->create($data);
-        /*if (isset($data['category_id']) && !empty($data['category_id'])){
-            $category = Category::find($data['category_id']);
-            $this->model->category()->associate($category);
-        }*/
     }
 
     public function update(array $data, string $id): void

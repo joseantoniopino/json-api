@@ -39,7 +39,6 @@ class Category extends Model
     public function getApartments()
     {
         $data = [];
-        dd($this->apartments);
         foreach ($this->apartments as $apartment){
             $data['ids'][] = $apartment->id;
         }

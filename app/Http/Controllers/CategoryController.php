@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ApartmentCollection;
-use App\Http\Resources\ApartmentResource;
 use App\Http\Resources\CategoryCollection;
 use App\Http\Resources\CategoryResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use JetBrains\PhpStorm\ArrayShape;
-use Src\Apartment\Repositories\ApartmentRepositoryInterface;
-use Src\Apartment\SaveApartmentUseCase;
-use Src\Apartment\UpdateApartmentUseCase;
 use Src\Category\Repositories\CategoryRepository;
 use Src\Category\SaveCategoryUseCase;
 use Src\Category\UpdateCategoryUseCase;

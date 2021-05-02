@@ -7,9 +7,9 @@ use App\Http\Resources\ApartmentResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use JetBrains\PhpStorm\ArrayShape;
-use Src\Apartment\Repositories\ApartmentRepositoryInterface;
-use Src\Apartment\SaveApartmentUseCase;
-use Src\Apartment\UpdateApartmentUseCase;
+use Src\Apartment\Infrastructure\Repositories\ApartmentRepositoryInterface;
+use Src\Apartment\Application\SaveApartmentUseCase;
+use Src\Apartment\Application\UpdateApartmentUseCase;
 
 class ApartmentController extends Controller
 {

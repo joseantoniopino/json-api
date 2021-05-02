@@ -1,10 +1,11 @@
 <?php
 
 
-namespace Src\Apartment;
+namespace Src\Apartment\Application;
 
 
-use Src\Apartment\Repositories\ApartmentRepositoryInterface;
+use Src\Apartment\Domain\Entities\ApartmentDomain;
+use Src\Apartment\Infrastructure\Repositories\ApartmentRepositoryInterface;
 
 class SaveApartmentUseCase
 {

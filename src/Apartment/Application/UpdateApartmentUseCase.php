@@ -1,11 +1,12 @@
 <?php
 
 
-namespace Src\Apartment;
+namespace Src\Apartment\Application;
 
 
-use Src\Apartment\Exceptions\ApartmentNotFoundException;
-use Src\Apartment\Repositories\ApartmentRepositoryInterface;
+use Src\Apartment\Domain\Entities\ApartmentDomain;
+use Src\Apartment\Domain\Exceptions\ApartmentNotFoundException;
+use Src\Apartment\Infrastructure\Repositories\ApartmentRepositoryInterface;
 use Src\ValueObjects\Uuid;
 
 class UpdateApartmentUseCase

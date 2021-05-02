@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Src\Apartment;
+namespace Src\Apartment\Domain\Entities;
 
 
 use Src\ValueObjects\NotEmptyInteger;

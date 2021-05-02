@@ -20,7 +20,6 @@ class CreateApartmentsTable extends Migration
             $table->text('description');
             $table->integer('quantity');
             $table->timestamps();
-            $table->softDeletes();
 
             // Relation
             $table->foreign('category_id')
